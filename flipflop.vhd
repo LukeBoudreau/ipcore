@@ -1,18 +1,18 @@
 LIBRARY ieee;
 USE ieee.std logic 1164.all;
 
-ENTITY flipflop IS
+entity flipflop is
     PORT(   D   : in std_logic;
-            clk : IN std_logic;
-            Q : OUT STD LOGIC );
-END flipflop;
+            clk : in std_logic;
+            Q : out std_logic );
+end flipflop;
 
-ARCHITECTURE behavior OF flipflop IS
-    BEGIN
-    PROCESS(Clock)
-    BEGIN
+architecture behavior of flipflop is
+    begin
+    process(clk)
+    begin
         IF clk’event AND clk ’1’ then
             Q <= D;
         end if;
     end process;
-END behavior;
+end behavior;
