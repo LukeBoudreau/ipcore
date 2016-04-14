@@ -17,6 +17,14 @@ port (
 end entity;
 
 architecture structural of derivative is
+Component 10bitAdder is
+    Port(
+        A : in STD_LOGIC_VECTOR(9 downto 0);
+        B : in STD_LOGIC_VECTOR(9 downto 0);
+        Y : out STD_LOGIC_VECTOR(9 downto 0)
+    );
+end Component;
+
 signal NE_SW: std_logic_vector(9 downto 0);
 signal N_S  : std_logic_vector(9 downto 0);
 signal E_W  : std_logic_vector(9 downto 0);
@@ -25,6 +33,6 @@ signal NW_SE: std_logic_vector(9 downto 0);
 begin
     -- This process computes the derivatives in 4 directions
     process(input)
-        
+        NE_SW <= 10bitAdder();
     end process;
 end;
